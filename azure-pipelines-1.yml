@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '61ff743f-b913-4634-8b9a-200c86c1d4aa'
+  #azureSubscription: '61ff743f-b913-4634-8b9a-200c86c1d4aa'
 
   # Web app name
   webAppName: 'shinelabjava'
@@ -49,24 +49,24 @@ stages:
     - publish: :$(Build.ArtifactStagingDirectory)
       artifact: drop
 
-- stage: Deploy
-  displayName: Deploy stage
-  dependsOn: Build
-  condition: succeeded()
-  jobs:
-  - deployment: DeployLinuxWebApp
-    displayName: Deploy Linux Web App
-    environment: $(environmentName)
-    pool:
-      vmImage: $(vmImageName)
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: shinelabjava'
-            inputs:
-              azureSubscription: $(azureSubscription)
-              appType: webAppLinux
-              appName: $(webAppName)
-              package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
+#- stage: Deploy
+#  displayName: Deploy stage
+#  dependsOn: Build
+#  condition: succeeded()
+#  jobs:
+#  - deployment: DeployLinuxWebApp
+#    displayName: Deploy Linux Web App
+#    environment: $(environmentName)
+#    pool:
+#     vmImage: $(vmImageName)
+#    strategy:
+#      runOnce:
+#        deploy:
+#          steps:
+#          - task: AzureWebApp@1
+#            displayName: 'Azure Web App Deploy: shinelabjava'
+#            inputs:
+#              azureSubscription: $(azureSubscription)
+#              appType: webAppLinux
+#              appName: $(webAppName)
+#              package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
