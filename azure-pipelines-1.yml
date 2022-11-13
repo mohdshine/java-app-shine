@@ -4,12 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- main
+- main1
 
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  #azureSubscription: '61ff743f-b913-4634-8b9a-200c86c1d4aa'
+  #azureSubscription: '1161ff743f-b913-4634-8b9a-200c86c1d4aa'
 
   # Web app name
   webAppName: 'shinelabjava'
