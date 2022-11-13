@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: 'a359b367-f26a-4814-9866-438f1c0953e4'
+  azureSubscription: '61ff743f-b913-4634-8b9a-200c86c1d4aa'
 
   # Web app name
   webAppName: 'shinelabjava'
