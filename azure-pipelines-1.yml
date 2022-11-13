@@ -32,7 +32,7 @@ stages:
     steps:
     - task: Ant@1
       inputs:
-        buildFile: 'build.xml'
+        buildFile: 'pom.xml'
         options: 
         publishJUnitResults: true
         testResultsFiles: '**/TEST-*.xml'
